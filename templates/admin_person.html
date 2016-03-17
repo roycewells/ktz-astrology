@@ -1,0 +1,22 @@
+{% extends "admin_base.html" %}
+{% block title %}{{ super() }} {% endblock %}
+{% block head %}{{ super() }} {% endblock %}
+{% block nav %}{{ super() }}{% endblock %}
+{% block body %}
+
+
+<div class="inner-wrapper">
+    <div class="content">
+        <h2>{{person.name}}</h2>
+        <h4>{{person.email}}</h4>
+		<h4>{{person.birthday}}</h4>
+		<h4>{{person.birth_latitude}}</h4>
+		<h4>{{person.birth_longitude}}</h4>
+		<h4>{{person.status}}</h4>
+		<br>
+		<h6>{{person._id}}</h6>
+    </div>
+</div>
+
+
+{% endblock %}

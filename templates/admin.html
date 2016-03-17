@@ -1,0 +1,36 @@
+{% extends "admin_base.html" %}
+{% block title %} {{ super() }} {% endblock %}
+{% block body %}
+
+
+<div class="inner-wrapper">
+    <h2>People to be processed</h2>
+    <div class="content">
+        <table class="table table-hover">
+            <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Birthplace</th>
+                    <th>Birthday</th>
+                    <th>Unique ID</th>
+                  </tr>
+            </thead>
+            <tbody>
+            {% for person in people %}
+                <tr>
+                    <td>{{person.name}}</td>
+                    <td>{{person.email}}</td>
+                    <td>{{person.birth_latitude}}, {{person.birth_longitude}}</td>
+                    <td>{{person.birthday}}</td>
+                    <td class="id_string">{{person._id}}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+</div>
+
+
+{% endblock %}

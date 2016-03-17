@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %} {{ super() }} {% endblock %}
+{% block body %}
+
+<article
+	id="data"
+	data-name="{{name}}"
+	data-birthday="{{birthday}}"
+	data-birthplace="{{birthplace}}"
+	data-birth_latitude="{{birth_latitude}}"
+    data-birth_longitude = "{{birth_longitude}}"
+    >
+</article>
+
+<form action="/create-payment" method="post">
+    <input type="hidden" name="name" value="{{name}}">
+    <input type="hidden" name="birthday" value="{{birthday}}">
+    <input type="hidden" name="birthplace" value="{{birthplace}}">
+    <input type="hidden" name="birth_latitude" value="{{birth_latitude}}">
+    <input type="hidden" name="birth_longitude" value="{{birth_longitude}}">
+    <input type="hidden" name="birth_time" value="{{birth_time}}">
+    
+    <button data-paypal-button="true" type="submit">
+      <img src="//www.paypalobjects.com/en_US/i/btn/btn_xpressCheckout.gif" alt="Check out with PayPal" />
+    </button>
+</form>
+
+{% endblock %}

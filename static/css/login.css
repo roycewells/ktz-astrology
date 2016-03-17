@@ -1,0 +1,19 @@
+h2{
+	color: black !important;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+
+}
+
+
+.form-signin{
+    max-width: 330px;
+    margin: 10% auto;
+}
+
+body{
+    background-color: #eee;
+}
+
+#signin-button{
+    margin-top: 10px;
+}

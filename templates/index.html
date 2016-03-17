@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %} {{ super() }} {% endblock %}
+{% block body %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+
+
+<div class="inner-wrapper">
+    <div class="scrim"></div>
+    <div class="content">
+        <h1>Know the Zodiac</h1>
+        <h2 class="subheader">Get a free, personalized horoscope reading</h2>
+        <form class="form" action="/reading" method="post">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>Name</label>
+                            <input name="name" type="text" id="inputName" class="form-control" placeholder="" required autofocus>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Date of Birth</label>
+                            <input name="birthday" type="text" id="inputBirthday" class="form-control" placeholder="MM/DD/YYYY" required>
+                         </div>
+                         <div class="col-md-6">
+                            <label>Time of Birth</label>
+                            <input name="birthtime" type="text" id="inputBirthTime" class="form-control" placeholder="00:00" required>
+                       </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label>Birthplace</label>
+                            <input name="birthplace" type="text" id="inputBirthCity" class="form-control" placeholder='eg "Boston, MA" or "127 Rue de Cuchon, Paris, France"'  required>
+                        </div>
+                    </div>
+                </div>
+                <button id="front-page-button" class="btn btn-lg btn-primary btn-block" type="submit">Get reading</button>
+              </form>
+
+        <script src="{{ url_for('static', filename='js/index.js')}}"></script>
+    </div>
+</div>
+
+{% endblock %}
