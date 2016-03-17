@@ -1,0 +1,102 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    color: #eee !important;
+    font-family: 'Lato' !important;
+}
+
+h1 {
+    color: #fff;
+    text-align: center;
+    margin: 0 auto !important;
+    padding-bottom: 2rem;
+    text-shadow: 2px 2px #444;
+}
+
+.subheader {
+    text-align: center;
+    font-size: 23px;
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    font-family: 'Lato';
+    font-weight: 300;
+}
+
+.wrapper {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.inner-wrapper {
+    min-width: 100%;
+    min-height: 100%;
+    background: url('/static/img/nightsky.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.scrim {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.content {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 10vh 3rem;
+    z-index: 3;
+}
+
+.form-control{
+    background-color: #e5e5e5 !important;
+}
+
+.success-message {
+    border-radius: 3px;
+    width: 100%;
+    padding: 8rem 0;
+}
+
+.bg-success {
+    background-color: #cff0cf !important;
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    padding: 1.25rem 2rem;
+    border-radius: 5px;
+    line-height: 3rem;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+button {
+    margin-top: 25px !important;
+}
+
+@media (max-width: 992px) {
+    .content {
+        padding: 5vh 3rem;
+    }
+    #inputBirthday {
+        margin-bottom: 15px
+    }
+}
+
+@media (max-width: 400px) {
+    .content {
+        padding: 2rem 1rem;
+    }
+}

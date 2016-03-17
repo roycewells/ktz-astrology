@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %} {{ super() }} {% endblock %}
+{% block body %}
+
+<article
+	id="data"
+	data-name="{{name}}"
+	data-birthday="{{birthday}}"
+	data-birthplace="{{birthplace}}"
+	data-birth_latitude="{{birth_latitude}}"
+    data-birth_longitude = "{{birth_longitude}}"
+    data-payment_id = "{{payment_id}}"
+    data-payer_id   = "{{payer_id}}"
+    >
+</article>
+
+
+<div class="inner-wrapper">
+    <div class="content">
+        <form class="form" action="/execute-payment" method="post">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label class="">Name</label>
+                                <input name="name" type="text" id="inputName" class="form-control" value="{{name}}" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="">Date of Birth</label>
+                                <input name="birthday" type="text" id="inputBirthday" class="form-control uneditable-input" value="{{birthday}}" required>
+                             </div>
+                             <div class="col-md-6">
+                                <label class="">Time of Birth</label>
+                                <input name="birthTime" type="text" id="inputBirthTime" class="form-control uneditable-input"  value="{{name}}" required>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label class="">Birthplace</label>
+                                <input name="birthplace" type="text" id="inputBirthCity" class="form-control uneditable-input" value="{{birthplace}}" required>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="front-page-button" class="btn btn-lg btn-primary btn-block" type="submit">Complete Payment</button>
+                    
+                    <input type="hidden" name="payment_id" value="{{payment_id}}">
+                    <input type="hidden" name="payer_id" value="{{payer_id}}">
+            </form>
+    </div>
+</div>
+        
+
+<script src="{{ url_for('static', filename='js/finalize.js')}}"></script>
+        
+        
+{% endblock %}

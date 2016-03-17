@@ -1,0 +1,74 @@
+{% extends "admin_base.html" %}
+{% block title %} {{ super() }} {% endblock %}
+{% block body %}
+
+{% set menu_options = [
+	("hp", "Houses/Planets"),
+	("pz", "Planet/Sign"),
+	("ppa", "Planet/Planet/Angle"),
+	("sh", "Stellium: 3 houses"),
+	("sp", "Stellium: 3 planets")
+] %}
+
+{% set planets = [
+	"sun", "moon", "mercury", "venus", "mars", "jupiter", "saturn", "uranus", "neptune", "pluto", "ascendant", "medium coeli", "north node true"
+] %}
+
+{% set zodiacs = [
+	"aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius", "capricorn", "aquarius", "pisces"
+] %}
+
+{% set angles = [
+	"sextile", "square", "trine", "opposition"
+] %}
+
+{% set houses = [
+	"1", "2", "3", "4", "5", "6", "7", "8", "9", "10","11","12"
+] %}
+
+
+<div class="inner-wrapper">
+	<div class="content">
+		<h2 class="descriptions-title">Enter Descriptions</h2>
+		<select class="form-control mode">
+			{% for value, label in menu_options %}
+				<option value="{{value}}">{{label}}</option>
+			{% endfor %}
+		</select>
+		<div class="dropdowns">
+			<select class="form-control planets-dropdown options">
+				{% for label in planets %}
+					<option value="{{label}}">{{label}}</option>
+				{% endfor %}
+			</select>
+			<select class="form-control zodiacs-dropdown options">
+				{% for label in zodiacs %}
+					<option value="{{label}}">{{label}}</option>
+				{% endfor %}
+			</select>
+			<select class="form-control planets2-dropdown options">
+				{% for label in planets %}
+					<option value="{{label}}">{{label}}</option>
+				{% endfor %}
+			</select>
+			<select class="form-control angles-dropdown options">
+				{% for label in angles %}
+					<option value="{{label}}">{{label}}</option>
+				{% endfor %}
+			</select>
+			<select class="form-control houses-dropdown options">
+				{% for label in houses %}
+					<option value="{{label}}">{{label}}</option>
+				{% endfor %}
+			</select>
+		</div>
+		<textarea class="form-control" rows="3"></textarea>
+		<button class="btn btn-primary submit-button"> Submit </button>
+	</div>
+</div>
+
+
+<script src="{{ url_for('static', filename='js/descriptions.js')}}"></script>
+
+
+{% endblock %}

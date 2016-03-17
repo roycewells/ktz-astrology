@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %} {{ super() }} {% endblock %}
+{% block body %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+
+<div class="container">
+
+      <form class="form-signin" action="/login" method="post">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label class="sr-only">Username</label>
+        <input name="username" type="text" id="inputEmail" class="form-control" placeholder="Username" required autofocus>
+        <label class="sr-only">Password</label>
+        <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <!--<div class="checkbox">-->
+        <!--  <label>-->
+        <!--    <input type="checkbox" value="remember-me"> Remember me-->
+        <!--  </label>-->
+        <!--</div>-->
+        <button id="signin-button" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+      
+      <div class="error-message">
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				{% for message in messages%}
+					<p>{{message}}</p>
+				{% endfor %}
+			{% endif %}
+		{% endwith %}
+	</div>
+
+</div>
+	
+
+{% endblock %}

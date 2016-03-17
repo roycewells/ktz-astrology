@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+{% block head %}
+	<meta charset="utf-8">
+	<title>{{page_title}}</title>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<meta name="description" content="Get a personalized horoscope.">
+
+	<meta name="author" content="Know the Zodiac">
+
+	<link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+	<link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+  <link href='http://fonts.googleapis.com/css?family=Cinzel+Decorative|Lato' rel='stylesheet' type='text/css'>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+{% endblock %}
+</head>
+
+<body>
+	
+	<div class="wrapper">
+		{% block nav %}{% endblock %}
+		{% block body %}{% endblock %}
+	</div>
+</body>
+</html>
